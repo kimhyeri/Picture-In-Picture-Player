@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "AVFoundation/AVFoundation.h"
 
 @interface AppDelegate ()
 
@@ -13,12 +14,15 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [[AVAudioSession sharedInstance] setActive: YES error: nil];
+    
     return YES;
 }
-
 
 #pragma mark - UISceneSession lifecycle
 
