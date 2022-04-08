@@ -20,12 +20,18 @@ class ViewController: UIViewController {
     }
     
     func settingUpPiPController() {
+        guard let url = URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4") else { return }
+        
+        let player = AVPlayer(url: url)
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.bounds
+        self.view.layer.addSublayer(playerLayer)
+        player.play()
+
         if AVPictureInPictureController.isPictureInPictureSupported() {
-            /*
-             put avplayer' playerLayer here
-             pipController = AVPictureInPictureController(playerLayer: self.playerLayer)
-             */
+            pipController = AVPictureInPictureController(playerLayer: playerLayer)
             pipController?.delegate = self
+            pipController?.canStartPictureInPictureAutomaticallyFromInline = true
         }
     }
 }
