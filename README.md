@@ -11,5 +11,5 @@ Picture-In-Picture Extension
 ### Objective-C
 - ViewController -> settingUpPiPController
 
-### demo
+### Demo
 ![텍스트목록](./sample/sample.gif)
