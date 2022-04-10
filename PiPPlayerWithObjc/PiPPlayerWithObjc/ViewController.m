@@ -25,15 +25,24 @@ AVPictureInPictureControllerDelegate
 }
 
 - (void)settingUpPiPController {
+    NSURL *url = [NSURL URLWithString: @"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"];
+    AVPlayer *player = [[AVPlayer alloc] initWithURL: url];
+    AVPlayerLayer *playerLayer = [[AVPlayerLayer alloc] init];
+    [playerLayer setFrame: self.view.bounds];
+    [playerLayer setPlayer: player];
+    [self.view.layer addSublayer: playerLayer];
+    [player play];
+    
     if([AVPictureInPictureController isPictureInPictureSupported]){
-        /*
-         put avplayer' playerLayer here
-         self.pipController = [[AVPictureInPictureController alloc] initWithPlayerLayer: self.playerLayer];
-         */
+        self.pipController = [[AVPictureInPictureController alloc] initWithPlayerLayer: playerLayer];
         self.pipController.delegate = self;
+        self.pipController.canStartPictureInPictureAutomaticallyFromInline = YES;
+    } else {
+        NSLog(@"not supported");
     }
 }
 
+// MARK: - AVPictureInPictureControllerDelegate
 - (void)pictureInPictureControllerWillStartPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
     NSLog(@"pictureInPictureControllerWillStartPictureInPicture");
 }

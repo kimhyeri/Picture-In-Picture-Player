@@ -32,10 +32,13 @@ class ViewController: UIViewController {
             pipController = AVPictureInPictureController(playerLayer: playerLayer)
             pipController?.delegate = self
             pipController?.canStartPictureInPictureAutomaticallyFromInline = true
+        } else {
+            print("not supported")
         }
     }
 }
 
+// MARK: - AVPictureInPictureControllerDelegate
 extension ViewController: AVPictureInPictureControllerDelegate {
     func pictureInPictureControllerWillStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         print("pictureInPictureControllerWillStartPictureInPicture")
