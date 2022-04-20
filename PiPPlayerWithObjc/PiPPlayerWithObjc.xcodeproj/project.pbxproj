@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A94730F280E9D1C00EAAB07 /* SampleBufferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A94730E280E9D1C00EAAB07 /* SampleBufferViewController.m */; };
 		6ACC9F7627F979CF00F71936 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC9F7527F979CF00F71936 /* AppDelegate.m */; };
 		6ACC9F7927F979CF00F71936 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC9F7827F979CF00F71936 /* SceneDelegate.m */; };
 		6ACC9F7C27F979CF00F71936 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6ACC9F7B27F979CF00F71936 /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A94730D280E9D1C00EAAB07 /* SampleBufferViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SampleBufferViewController.h; sourceTree = "<group>"; };
+		6A94730E280E9D1C00EAAB07 /* SampleBufferViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SampleBufferViewController.m; sourceTree = "<group>"; };
 		6ACC9F7127F979CF00F71936 /* PiPPlayerWithObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PiPPlayerWithObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ACC9F7427F979CF00F71936 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6ACC9F7527F979CF00F71936 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 				6ACC9F7827F979CF00F71936 /* SceneDelegate.m */,
 				6ACC9F7A27F979CF00F71936 /* ViewController.h */,
 				6ACC9F7B27F979CF00F71936 /* ViewController.m */,
+				6A94730D280E9D1C00EAAB07 /* SampleBufferViewController.h */,
+				6A94730E280E9D1C00EAAB07 /* SampleBufferViewController.m */,
 				6ACC9F7D27F979CF00F71936 /* Main.storyboard */,
 				6ACC9F8027F979D100F71936 /* Assets.xcassets */,
 				6ACC9F8227F979D100F71936 /* LaunchScreen.storyboard */,
@@ -146,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A94730F280E9D1C00EAAB07 /* SampleBufferViewController.m in Sources */,
 				6ACC9F7C27F979CF00F71936 /* ViewController.m in Sources */,
 				6ACC9F7627F979CF00F71936 /* AppDelegate.m in Sources */,
 				6ACC9F8727F979D100F71936 /* main.m in Sources */,

@@ -13,6 +13,7 @@ AVPictureInPictureControllerDelegate
 >
 
 @property (nonatomic, retain) AVPictureInPictureController *pipController;
+
 @end
 
 @implementation ViewController
@@ -20,7 +21,7 @@ AVPictureInPictureControllerDelegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+
     [self settingUpPiPController];
 }
 
@@ -32,7 +33,7 @@ AVPictureInPictureControllerDelegate
     [playerLayer setPlayer: player];
     [self.view.layer addSublayer: playerLayer];
     [player play];
-    
+
     if([AVPictureInPictureController isPictureInPictureSupported]){
         self.pipController = [[AVPictureInPictureController alloc] initWithPlayerLayer: playerLayer];
         self.pipController.delegate = self;
@@ -42,7 +43,7 @@ AVPictureInPictureControllerDelegate
     }
 }
 
-// MARK: - AVPictureInPictureControllerDelegate
+// MARK: - AVPictureInPictureControllerDelegate for AVPlayer
 - (void)pictureInPictureControllerWillStartPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
     NSLog(@"pictureInPictureControllerWillStartPictureInPicture");
 }
