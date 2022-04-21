@@ -37,6 +37,31 @@ AVPictureInPictureControllerDelegate
     }
 }
 
+// MARK: - AVPictureInPictureControllerDelegate for AVPlayer
+- (void)pictureInPictureControllerWillStartPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
+    NSLog(@"pictureInPictureControllerWillStartPictureInPicture");
+}
+
+- (void)pictureInPictureControllerDidStartPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
+    NSLog(@"pictureInPictureControllerDidStartPictureInPicture");
+}
+
+- (void)pictureInPictureController:(AVPictureInPictureController *)pictureInPictureController failedToStartPictureInPictureWithError:(NSError *)error {
+    NSLog(@"failedToStartPictureInPictureWithError");
+}
+
+- (void)pictureInPictureController:(AVPictureInPictureController *)pictureInPictureController restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(void (^)(BOOL))completionHandler {
+    NSLog(@"restoreUserInterfaceForPictureInPictureStopWithCompletionHandler");
+}
+
+- (void)pictureInPictureControllerWillStopPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
+    NSLog(@"pictureInPictureControllerWillStopPictureInPicture");
+}
+
+- (void)pictureInPictureControllerDidStopPictureInPicture:(AVPictureInPictureController *)pictureInPictureController {
+    NSLog(@"pictureInPictureControllerDidStopPictureInPicture");
+}
+
 // MARK: - AVPictureInPictureSampleBufferPlaybackDelegate With SampleBuffer
 // Tells the delegate when the system Picture in Picture window changes size.
 - (void)pictureInPictureController:(nonnull AVPictureInPictureController *)pictureInPictureController didTransitionToRenderSize:(CMVideoDimensions)newRenderSize {
