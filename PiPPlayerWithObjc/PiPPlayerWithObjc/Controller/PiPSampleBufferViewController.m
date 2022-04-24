@@ -1,14 +1,14 @@
 //
-//  SampleBufferViewController.m
+//  PiPSampleBufferViewController.m
 //  PiPPlayerWithObjc
 //
 //  Created by 김혜리 on 2022/04/19.
 //
 
-#import "SampleBufferViewController.h"
+#import "PiPSampleBufferViewController.h"
 #import <AVKit/AVKit.h>
 
-@interface SampleBufferViewController () <
+@interface PiPSampleBufferViewController () <
 AVPictureInPictureSampleBufferPlaybackDelegate,
 AVPictureInPictureControllerDelegate
 >
@@ -17,7 +17,7 @@ AVPictureInPictureControllerDelegate
 
 @end
 
-@implementation SampleBufferViewController
+@implementation PiPSampleBufferViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

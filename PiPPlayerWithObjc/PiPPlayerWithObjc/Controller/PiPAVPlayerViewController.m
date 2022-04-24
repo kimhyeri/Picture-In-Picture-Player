@@ -1,14 +1,14 @@
 //
-//  ViewController.m
+//  PiPAVPlayerViewController.m
 //  PiPPlayerWithObjc
 //
-//  Created by 김혜리 on 2022/04/03.
+//  Created by 김혜리 on 2022/04/25.
 //
 
-#import "ViewController.h"
+#import "PiPAVPlayerViewController.h"
 #import <AVKit/AVKit.h>
 
-@interface ViewController () <
+@interface PiPAVPlayerViewController () <
 AVPictureInPictureControllerDelegate
 >
 
@@ -16,7 +16,7 @@ AVPictureInPictureControllerDelegate
 
 @end
 
-@implementation ViewController
+@implementation PiPAVPlayerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,7 +26,7 @@ AVPictureInPictureControllerDelegate
 }
 
 - (void)settingUpPiPController {
-    NSURL *url = [NSURL URLWithString: @"https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"];
+    NSURL *url = [NSURL URLWithString: self.urlString];
     AVPlayer *player = [[AVPlayer alloc] initWithURL: url];
     AVPlayerLayer *playerLayer = [[AVPlayerLayer alloc] init];
     [playerLayer setFrame: self.view.bounds];
