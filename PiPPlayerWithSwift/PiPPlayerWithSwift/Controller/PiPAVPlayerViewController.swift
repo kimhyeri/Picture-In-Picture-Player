@@ -1,16 +1,16 @@
 //
-//  ViewController.swift
+//  PiPAVPlayerViewController.swift
 //  PiPPlayerWithSwift
 //
-//  Created by 김혜리 on 2022/04/03.
+//  Created by 김혜리 on 2022/04/24.
 //
 
-import UIKit
 import AVKit
 
-class ViewController: UIViewController {
+class PiPAVPlayerViewController: UIViewController {
 
     var pipController: AVPictureInPictureController?
+    var urlString: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,10 @@ class ViewController: UIViewController {
     }
     
     func settingUpPiPController() {
-        guard let url = URL(string: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4") else { return }
+        guard let urlString = urlString,
+                let url = URL(string: urlString) else {
+            return
+        }
         
         let player = AVPlayer(url: url)
         let playerLayer = AVPlayerLayer(player: player)
@@ -39,7 +42,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - AVPictureInPictureControllerDelegate
-extension ViewController: AVPictureInPictureControllerDelegate {
+extension PiPAVPlayerViewController: AVPictureInPictureControllerDelegate {
     func pictureInPictureControllerWillStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         print("pictureInPictureControllerWillStartPictureInPicture")
     }

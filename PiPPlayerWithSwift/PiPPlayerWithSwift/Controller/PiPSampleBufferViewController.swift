@@ -1,5 +1,5 @@
 //
-//  SampleBufferViewController.swift
+//  PiPSampleBufferViewController.swift
 //  PiPPlayerWithSwift
 //
 //  Created by 김혜리 on 2022/04/21.
@@ -8,7 +8,7 @@
 import UIKit
 import AVKit
 
-class SampleBufferViewController: UIViewController {
+class PiPSampleBufferViewController: UIViewController {
 
     var pipController: AVPictureInPictureController?
     
@@ -32,7 +32,7 @@ class SampleBufferViewController: UIViewController {
 }
 
 // MARK: - AVPictureInPictureControllerDelegate
-extension SampleBufferViewController: AVPictureInPictureControllerDelegate {
+extension PiPSampleBufferViewController: AVPictureInPictureControllerDelegate {
     func pictureInPictureControllerWillStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         print("pictureInPictureControllerWillStartPictureInPicture")
     }
@@ -59,7 +59,7 @@ extension SampleBufferViewController: AVPictureInPictureControllerDelegate {
 }
 
 // MARK: - AVPictureInPictureSampleBufferPlaybackDelegate With SampleBuffer
-extension SampleBufferViewController: AVPictureInPictureSampleBufferPlaybackDelegate {
+extension PiPSampleBufferViewController: AVPictureInPictureSampleBufferPlaybackDelegate {
     // Tells the delegate when the system Picture in Picture window changes size.
     func pictureInPictureController(_ pictureInPictureController: AVPictureInPictureController, didTransitionToRenderSize newRenderSize: CMVideoDimensions) {
         print("didTransitionToRenderSize")
