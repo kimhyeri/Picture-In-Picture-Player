@@ -6,10 +6,12 @@ Picture-In-Picture Extension
 - You need to add Background Modes section.
 
 ### Swift
-- ViewController -> settingUpPiPController
+- PiPAVPlayerViewController -> setup
+- PiPSampleBufferViewController
 
 ### Objective-C
-- ViewController -> settingUpPiPController
+- PiPAVPlayerViewController -> setup
+- PiPSampleBufferViewController
 
 ### Demo
 ![텍스트목록](./sample/sample.gif)
