@@ -8,9 +8,9 @@
 import UIKit
 import AVKit
 
-class PiPSampleBufferViewController: UIViewController {
-
-    var pipController: AVPictureInPictureController?
+final class PiPSampleBufferViewController: UIViewController {
+    
+    private var pipController: AVPictureInPictureController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class PiPSampleBufferViewController: UIViewController {
         settingUpPiPControllerWithSampleBuffer()
     }
     
-    func settingUpPiPControllerWithSampleBuffer() {
+    private func settingUpPiPControllerWithSampleBuffer() {
         if AVPictureInPictureController.isPictureInPictureSupported() {
             // set your content Source
             // pipController = AVPictureInPictureController(contentSource: contentSource)
@@ -36,23 +36,23 @@ extension PiPSampleBufferViewController: AVPictureInPictureControllerDelegate {
     func pictureInPictureControllerWillStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         print("pictureInPictureControllerWillStartPictureInPicture")
     }
-
+    
     func pictureInPictureControllerDidStartPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         print("pictureInPictureControllerDidStartPictureInPicture")
     }
-
+    
     func pictureInPictureController(_ pictureInPictureController: AVPictureInPictureController, failedToStartPictureInPictureWithError error: Error) {
         print("failedToStartPictureInPictureWithError")
     }
-
+    
     func pictureInPictureControllerWillStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         print("pictureInPictureControllerWillStopPictureInPicture")
     }
-
+    
     func pictureInPictureControllerDidStopPictureInPicture(_ pictureInPictureController: AVPictureInPictureController) {
         print("pictureInPictureControllerDidStopPictureInPicture")
     }
-
+    
     func pictureInPictureController(_ pictureInPictureController: AVPictureInPictureController, restoreUserInterfaceForPictureInPictureStopWithCompletionHandler completionHandler: @escaping (Bool) -> Void) {
         print("restoreUserInterfaceForPictureInPictureStopWithCompletionHandler")
     }
@@ -73,7 +73,7 @@ extension PiPSampleBufferViewController: AVPictureInPictureSampleBufferPlaybackD
             print("something do")
         }
     }
-
+    
     // Tells the delegate that the user has requested skipping forward or backward by the indicated time interval.
     func pictureInPictureController(_ pictureInPictureController: AVPictureInPictureController, skipByInterval skipInterval: CMTime, completion completionHandler: @escaping () -> Void) {
         print("skipInterval")
